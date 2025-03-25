@@ -1,4 +1,4 @@
-# Projet Tensions sur le Marché du Travail - Unédic
+# 🔍 Projet Tensions sur le Marché du Travail - Unédic
 
 Ce projet vise à développer une carte interactive au niveau des zones d'emploi affichant un indicateur de tension sur le marché du travail. La carte permet d’identifier des catégories de territoires en fonction de l’intensité de la tension sur une catégorie professionnelle donnée, facilitant ainsi l’analyse statistique et éclairant les décisions en matière de politiques publiques.
 
@@ -65,7 +65,7 @@ Les contributions et collaborations visant à améliorer l’outil sont les bien
 
 ------------------------------------------------------------------------
 
-# Labour Market Tightness Project - Unédic
+# 🔍 Labour Market Tightness Project - Unédic
 
 This project aims to develop an interactive map at the employment zone level displaying a labour market tightness indicator. The map allows the identification of territorial categories based on the intensity of tightness in a given job category, facilitating statistical analysis and informing public policy decisions.
 
