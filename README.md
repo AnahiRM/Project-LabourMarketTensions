@@ -1,20 +1,22 @@
 # Projet Tensions sur le Marché du Travail - Unédic
 
-Ce projet vise à développer une carte interactive au niveau communal affichant des indicateurs sur les offres d’emploi, les demandeurs d’emploi (en flux comme en stock) et les tensions sur le marché du travail. La carte permettra d’identifier des catégories de territoires en fonction de l’intensité et de la nature des tensions, facilitant l’analyse statistique et éclairant les décisions en matière de politiques publiques.
+Ce projet vise à développer une carte interactive au niveau des zones d'emploi affichant un indicateur de tension sur le marché du travail. La carte permet d’identifier des catégories de territoires en fonction de l’intensité de la tension sur une catégorie professionnelle donnée, facilitant ainsi l’analyse statistique et éclairant les décisions en matière de politiques publiques.
 
 ## **Contexte du projet**
 
-Le projet résulte d’une collaboration entre le MSc&T « Data and Economics for Public Policy » (École Polytechnique, ENSAE & Télécom Paris) et l'Unédic ( association chargée par délégation de service public de la gestion de l'assurance chômage en France). Il a été développé dans le cadre d’un défi proposé aux étudiants, visant la création d’un outil d’observation et d’analyse des dynamiques du marché du travail à une échelle territoriale fine.
+Le projet résulte d’une collaboration entre le MSc&T « Data and Economics for Public Policy » (École Polytechnique, ENSAE & Télécom Paris) et l'Unédic (association chargée par délégation de service public de la gestion de l'assurance chômage en France). Il a été développé dans le cadre d’un défi proposé aux étudiants, visant la création d’un outil d’observation et d’analyse des dynamiques du marché du travail à une échelle territoriale fine.
 
 ## **La Carte Interactive**
 
-L’outil permet de visualiser des indicateurs clés du marché du travail, notamment : - Offres d’emploi - Demandeurs d’emploi (tant en flux qu’en stock) - Tensions sur le marché du travail
+### Fonctionnalités
 
-L’objectif est de proposer une analyse au niveau communal pour catégoriser les territoires selon l’ampleur et la nature des tensions sur l’emploi. Ces catégories peuvent ainsi guider des politiques ciblées et des stratégies d’intervention sur le marché du travail.
+L'application permet de visualiser la tension sur le marché du travail en France en 2020 (les données plus récentes n'étant pas disponibles à l'échelle du projet) à travers une carte interactive et des graphiques dynamiques. Les utilisateurs peuvent filtrer les données par catégorie d'emploi, type de demandeur d'emploi et région, et explorer l'évolution mensuelle des indicateurs. L'outil fournit une analyse en temps réel de la situation du marché du travail à différents niveaux géographiques.
 
 ### **Sources de données**
 
-Le projet s’appuie sur des données administratives et des données en libre accès : - **Jocas 2020 (Dares)** : Disponible via l’ADISP ou en lien direct avec la Dares pour des millésimes plus récents. - **France Travail Open Data** : Données trimestrielles diffusées sur les demandeurs d’emploi au niveau communal pour les communes de plus de 5 000 habitants, avec des ventilations par métier, qualification, diplôme, sexe et âge. Pour les plus petites communes, on recourt également à des données agrégées au niveau départemental. - **Autres sources complémentaires** : peuvent être intégrées pour enrichir l’analyse.
+Le projet s’appuie sur des données administratives et des données en libre accès :
+- **Jocas 2020 (Dares)** : Disponible via l’ADISP ou en lien direct avec la Dares pour des millésimes plus récents.
+- **France Travail Open Data** : Données trimestrielles diffusées sur les demandeurs d’emploi au niveau communal pour les communes de plus de 5 000 habitants, avec des ventilations par métier, qualification, diplôme, sexe et âge.
 
 ### **Applications Potentielles**
 
@@ -24,109 +26,107 @@ Le projet s’appuie sur des données administratives et des données en libre a
 
 ## **Exécution de l’Application**
 
-L’outil est accessible en exécutant le script localisé dans `./app`. Tous les fichiers nécessaires se trouvent dans le dossier `./data`.
+L’outil est accessible en exécutant le script "labour_tightness_dashboard.ipynb" situé dans `./app`. Tous les fichiers nécessaires se trouvent dans le dossier `./data`.
 
-Pour les utilisateurs souhaitant reproduire le projet depuis le début, les scripts nécessaires sont fournis dans le répertoire `./src`, avec des consignes détaillées dans les fichiers README. Certains ensembles de données de grande taille doivent être téléchargés manuellement.
+Pour les utilisateurs souhaitant reproduire le projet depuis le début, les scripts nécessaires sont fournis dans le répertoire `./src`, avec des consignes détaillées dans les fichiers README. Certains ensembles de données de grande taille (JOCAS) doivent être téléchargés manuellement.
 
 ## **Structure des Fichiers**
-
-```         
-├── README.md <- Documentation principale du projet.
-├── LICENSE <- Licence du projet.
-├── app <- Scripts pour exécuter l’outil de cartographie interactive.
-├── data
-│   ├── 1- 
-│   ├── 2- 
-│   ├── 3- 
-├── src <- Code source pour le traitement et l’analyse des données.
-│   ├── 
-│   ├── 
-│   └── 
-├── docs
-├── reports
 ```
+├── README.md               <- Documentation principale du projet
+├── LICENSE                 <- Licence du projet
+├── app                     <- Scripts pour exécuter l’outil de cartographie interactive
+├── data 
+│   ├── 1- Raw Data         <- Données brutes
+│   ├── 2- Formatted Data   <- Données formatées
+│   ├── 3- Final Data       <- Données finales
+│   ├── linking tables      <- Tables de liaison
+│   └── shapefiles          <- Shapefiles nécessaires à la cartographie
+├── src                     <- Code source pour le traitement et l’analyse des données.
+│   ├── 00_explore_jocas_missing_values.ipynb <- Exploration des valeurs manquantes de JOCAS
+│   ├── 01_match_communes_with_shapefile.ipynb <- Correspondance des communes avec le shapefile
+│   ├── 02_clean_rome_fap_mapping.ipynb <- Nettoyage de la table de correspondance ROME-FAP
+│   ├── 03_process_stmt_demand.ipynb <- Traitement des données STMT (demande)
+│   ├── 04_process_jocas_supply.ipynb <- Traitement des données JOCAS (offre)
+│   └── 05_compute_labour_tightness_ratio.ipynb   <- Calcul du ratio de tension sur le marché du travail
+├── docs                    <- Références et documents utilisés lors du projet
+├── reports                 <- Note méthodologique + diaporama de présentation
+```
+
 
 ## **Contributions & Contact**
 
 Pour toute suggestion ou pour signaler des erreurs, vous pouvez contacter :
 
--   Alfonso Awadalla-Carreño : [alfonso.awadalla-carreno\@polytechnique.edu](mailto:alfonso.awadalla-carreno@polytechnique.edu)
+-   Alfonso Awadalla-Carreño : [alfonso.awadalla-carreno@polytechnique.edu](mailto:alfonso.awadalla-carreno@polytechnique.edu)
 -   Cynthia Francis : [cynthia.francis@polytechnique.edu](mailto:cynthia.francis@polytechnique.edu)
 -   Anahi Reyes-Miguel : [anahi.reyes-miguel@polytechnique.edu](mailto:anahi.reyes-miguel@polytechnique.edu)
-
 
 Les contributions et collaborations visant à améliorer l’outil sont les bienvenues.
 
-## **Remerciements**
-
-Nous remercions nos encadrants académiques et notre partenaire externe pour leurs conseils et leur soutien au cours du développement de ce projet. Nous remercions tout particulièrement le programme MSc&T « Data and Economics for Public Policy » pour l’organisation de ce défi et pour l’expérience pratique en matière de politiques publiques qu’il offre.
-
 ------------------------------------------------------------------------
 
-# Labour Market Tensions Project - Unédic
+# Labour Market Tightness Project - Unédic
 
-This project aims to develop an interactive map at the municipal level displaying indicators on job offers, job seekers, and labor market tensions. The map will help identify categories of territories based on the level and nature of tensions, facilitating statistical analysis and informing public policy decisions.
+This project aims to develop an interactive map at the employment zone level displaying a labour market tightness indicator. The map allows the identification of territorial categories based on the intensity of tightness in a given job category, facilitating statistical analysis and informing public policy decisions.
 
 ## **Project Context**
 
-This project is the result of a collaboration between the MSc&T "Data and Economics for Public Policy" (École Polytechnique, ENSAE & Télécom Paris) and an and Unédic (the association responsible for managing unemployment insurance in France). It was developed as part of a challenge proposed to students to build a tool for observing and analyzing labor market dynamics at a fine territorial scale.
+The project is the result of a collaboration between the MSc&T "Data and Economics for Public Policy" (École Polytechnique, ENSAE & Télécom Paris) and Unédic (the association in charge of managing unemployment insurance in France by public service delegation). It was developed as part of a student challenge aimed at creating a tool for observing and analyzing labour market dynamics at a fine territorial scale.
 
-## **The Interactive Map**
+## **Interactive Map**
 
-The tool allows users to visualize key labor market indicators, including:
-- Job vacancies
-- Job seekers (both in terms of flows and stocks)
-- Labor market tensions
+### Features
 
-The map is designed to provide insights at the municipal level, helping to categorize territories based on the intensity and nature of job market tensions. These categories can inform targeted policy interventions and labor market strategies.
+The application allows users to visualize labour market tightness in France for 2020 (more recent data is unavailable for this project scale) through an interactive map and dynamic graphs. Users can filter data by job category, jobseeker type, and region, and explore the monthly evolution of indicators. The tool provides real-time analysis of the labour market situation at various geographical levels.
 
 ### **Data Sources**
-The project relies on publicly available and administrative data sources:
-- **Jocas 2020 (Dares)**: Can be accessed via ADISP or through direct collaboration with Dares for more recent data.
-- **France Travail Open Data**: Provides quarterly statistics on job seekers at the municipal level for communes with more than 5,000 inhabitants. These datasets include breakdowns by occupation, qualification, diploma, gender, and age. For smaller municipalities, aggregated data at the departmental level is also utilized.
-- **Other complementary datasets** may be integrated to enhance the analysis.
+
+The project relies on administrative and publicly available data:
+- **Jocas 2020 (Dares)**: Available via ADISP or directly from Dares for more recent datasets.
+- **France Travail Open Data**: Quarterly data on jobseekers at the commune level for communes with more than 5,000 inhabitants, with breakdowns by job, qualification, diploma, gender, and age.
 
 ### **Potential Applications**
-- **Exploratory analysis of labor market imbalances** at different geographic levels.
-- **Identification of clusters of territories** based on employment demand and supply tensions.
-- **Policy recommendations** to address mismatches between job vacancies and job seekers.
+
+-   **Exploratory analysis of labour market imbalances** at various geographical scales.
+-   **Identification of territorial clusters** based on job supply and demand.
+-   **Public policy recommendations** to address mismatches between job offers and jobseekers.
 
 ## **Running the Application**
 
-The tool is accessible by executing the script located in `./app`. All required files are included within the `./data` directory.
+The tool is accessible by running the "labour_tightness_dashboard.ipynb" script located in `./app`. All necessary files are located in the `./data` folder.
 
-For users who wish to reproduce the project from scratch, the necessary scripts are provided in `./src`, with instructions available in the README files. Some large datasets must be downloaded manually due to file size constraints.
+For users wishing to reproduce the project from the beginning, the necessary scripts are provided in the `./src` directory, with detailed instructions in the README files. Some large datasets (JOCAS) need to be downloaded manually.
+
 
 ## **File Structure**
-```         
-├── README.md <- Documentation principale du projet.
-├── LICENSE <- Licence du projet.
-├── app <- Scripts pour exécuter l’outil de cartographie interactive.
-├── data
-│   ├── 1- 
-│   ├── 2- 
-│   ├── 3- 
-├── src <- Code source pour le traitement et l’analyse des données.
-│   ├── 
-│   ├── 
-│   └── 
-├── docs
-├── reports
 ```
+├── README.md               <- Main documentation of the project
+├── LICENSE                 <- Project license
+├── app                     <- Scripts to run the interactive mapping tool
+├── data 
+│   ├── 1- Raw Data         <- Raw data
+│   ├── 2- Formatted Data   <- Formatted data
+│   ├── 3- Final Data       <- Final data
+│   ├── linking tables      <- Linking tables
+│   └── shapefiles          <- Shapefiles required for mapping
+├── src                     <- Source code for data processing and analysis.
+│   ├── 00_explore_jocas_missing_values.ipynb <- Exploration of missing values in JOCAS
+│   ├── 01_match_communes_with_shapefile.ipynb <- Matching communes with shapefile
+│   ├── 02_clean_rome_fap_mapping.ipynb <- Cleaning the ROME-FAP mapping table
+│   ├── 03_process_stmt_demand.ipynb <- Processing STMT data (demand)
+│   ├── 04_process_jocas_supply.ipynb <- Processing JOCAS data (supply)
+│   └── 05_compute_labour_tightness_ratio.ipynb <- Calculating the labour market tightness ratio
+├── docs                    <- References and documents used during the project
+├── reports                 <- Methodological note + presentation slides
+```
+
 
 ## **Contributions & Contact**
 
-For feedback, suggestions, or to report errors, please contact:
+For any suggestions or to report errors, you can contact:
 
--   Alfonso Awadalla-Carreño : [alfonso.awadalla-carreno\@polytechnique.edu](mailto:alfonso.awadalla-carreno@polytechnique.edu)
+-   Alfonso Awadalla-Carreño : [alfonso.awadalla-carreno@polytechnique.edu](mailto:alfonso.awadalla-carreno@polytechnique.edu)
 -   Cynthia Francis : [cynthia.francis@polytechnique.edu](mailto:cynthia.francis@polytechnique.edu)
 -   Anahi Reyes-Miguel : [anahi.reyes-miguel@polytechnique.edu](mailto:anahi.reyes-miguel@polytechnique.edu)
 
-
-We welcome contributions and collaborations to improve the tool further.
-
-## **Acknowledgments**
-
-We thank our academic mentors and external partners for their guidance and support in developing this project. Special thanks to the MSc&T "Data and Economics for Public Policy" program for organizing this initiative and fostering hands-on experience in public policy analytics.
-
-
+Contributions and collaborations to improve the tool are welcome.
