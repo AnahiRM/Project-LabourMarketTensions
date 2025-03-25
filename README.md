@@ -32,24 +32,24 @@ Pour les utilisateurs souhaitant reproduire le projet depuis le début, les scri
 
 ## **Structure des Fichiers**
 ```
-├── README.md               <- Documentation principale du projet
-├── LICENSE                 <- Licence du projet
-├── app                     <- Scripts pour exécuter l’outil de cartographie interactive
-├── data 
-│   ├── 1- Raw Data         <- Données brutes
-│   ├── 2- Formatted Data   <- Données formatées
-│   ├── 3- Final Data       <- Données finales
-│   ├── linking tables      <- Tables de liaison
-│   └── shapefiles          <- Shapefiles nécessaires à la cartographie
-├── src                     <- Code source pour le traitement et l’analyse des données.
-│   ├── 00_explore_jocas_missing_values.ipynb <- Exploration des valeurs manquantes de JOCAS
-│   ├── 01_match_communes_with_shapefile.ipynb <- Correspondance des communes avec le shapefile
-│   ├── 02_clean_rome_fap_mapping.ipynb <- Nettoyage de la table de correspondance ROME-FAP
-│   ├── 03_process_stmt_demand.ipynb <- Traitement des données STMT (demande)
-│   ├── 04_process_jocas_supply.ipynb <- Traitement des données JOCAS (offre)
-│   └── 05_compute_labour_tightness_ratio.ipynb   <- Calcul du ratio de tension sur le marché du travail
-├── docs                    <- Références et documents utilisés lors du projet
-├── reports                 <- Note méthodologique + diaporama de présentation
+├── README.md                                      <- Documentation principale du projet
+├── LICENSE                                        <- Licence du projet
+├── app                                            <- Scripts pour exécuter l’outil de cartographie interactive
+├── data                                           <- Toutes les données
+│   ├── 1- Raw Data                                <- Données brutes
+│   ├── 2- Formatted Data                          <- Données formatées
+│   ├── 3- Final Data                              <- Données finales
+│   ├── linking tables                             <- Tables de liaison
+│   └── shapefiles                                 <- Shapefiles nécessaires à la cartographie
+├── src                                            <- Code source pour le traitement et l’analyse des données.
+│   ├── 00_explore_jocas_missing_values.ipynb      <- Exploration des valeurs manquantes de JOCAS
+│   ├── 01_match_communes_with_shapefile.ipynb     <- Correspondance des communes avec le shapefile
+│   ├── 02_clean_rome_fap_mapping.ipynb            <- Nettoyage de la table de correspondance ROME-FAP
+│   ├── 03_process_stmt_demand.ipynb               <- Traitement des données STMT (demande)
+│   ├── 04_process_jocas_supply.ipynb              <- Traitement des données JOCAS (offre)
+│   └── 05_compute_labour_tightness_ratio.ipynb    <- Calcul du ratio de tension sur le marché du travail
+├── docs                                           <- Références et documents utilisés lors du projet
+├── reports                                        <- Note méthodologique + diaporama de présentation
 ```
 
 
@@ -100,24 +100,24 @@ For users wishing to reproduce the project from the beginning, the necessary scr
 
 ## **File Structure**
 ```
-├── README.md               <- Main documentation of the project
-├── LICENSE                 <- Project license
-├── app                     <- Scripts to run the interactive mapping tool
-├── data 
-│   ├── 1- Raw Data         <- Raw data
-│   ├── 2- Formatted Data   <- Formatted data
-│   ├── 3- Final Data       <- Final data
-│   ├── linking tables      <- Linking tables
-│   └── shapefiles          <- Shapefiles required for mapping
-├── src                     <- Source code for data processing and analysis.
-│   ├── 00_explore_jocas_missing_values.ipynb <- Exploration of missing values in JOCAS
-│   ├── 01_match_communes_with_shapefile.ipynb <- Matching communes with shapefile
-│   ├── 02_clean_rome_fap_mapping.ipynb <- Cleaning the ROME-FAP mapping table
-│   ├── 03_process_stmt_demand.ipynb <- Processing STMT data (demand)
-│   ├── 04_process_jocas_supply.ipynb <- Processing JOCAS data (supply)
-│   └── 05_compute_labour_tightness_ratio.ipynb <- Calculating the labour market tightness ratio
-├── docs                    <- References and documents used during the project
-├── reports                 <- Methodological note + presentation slides
+├── README.md                                       <- Main documentation of the project
+├── LICENSE                                         <- Project license
+├── app                                             <- Scripts to run the interactive mapping tool
+├── data                                            <- All the data
+│   ├── 1- Raw Data                                 <- Raw data
+│   ├── 2- Formatted Data                           <- Formatted data
+│   ├── 3- Final Data                               <- Final data
+│   ├── linking tables                              <- Linking tables
+│   └── shapefiles                                  <- Shapefiles required for mapping
+├── src                                             <- Source code for data processing and analysis.
+│   ├── 00_explore_jocas_missing_values.ipynb       <- Exploration of missing values in JOCAS
+│   ├── 01_match_communes_with_shapefile.ipynb      <- Matching communes with shapefile
+│   ├── 02_clean_rome_fap_mapping.ipynb             <- Cleaning the ROME-FAP mapping table
+│   ├── 03_process_stmt_demand.ipynb                <- Processing STMT data (demand)
+│   ├── 04_process_jocas_supply.ipynb               <- Processing JOCAS data (supply)
+│   └── 05_compute_labour_tightness_ratio.ipynb     <- Calculating the labour market tightness ratio
+├── docs                                            <- References and documents used during the project
+├── reports                                         <- Methodological note + presentation slides
 ```
 
 
